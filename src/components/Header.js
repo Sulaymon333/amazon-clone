@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import { ShoppingCartIcon, MenuIcon, SearchIcon } from '@heroicons/react/outline';
+import { signIn, signOut, useSession } from 'next-auth/client';
 
 const Header = () => {
+    const [session] = useSession();
     return (
         <header>
             {/* top nav */}
@@ -26,8 +28,8 @@ const Header = () => {
 
                 {/* bottom nav */}
                 <div className="flex items-center text-xs space-x-6 text-white whitespace-nowrap">
-                    <div className="link">
-                        <p>Hello Suly</p>
+                    <div onClick={!session ? signIn : signOut} className="link">
+                        <p>{session ? `Hi ${session.user.name},` : 'Sign In'}</p>
                         <p className="font-extrabold md:text-sm">Account & Lists</p>
                     </div>
                     <div className="link">
@@ -35,7 +37,9 @@ const Header = () => {
                         <p className="font-extrabold md:text-sm">& Orders</p>
                     </div>
                     <div className="link flex items-center relative">
-                        <span className="bg-yellow-400 h-4 w-4 text-center rounded-full text-black font-bold top-0 right-0 md:right-10 absolute">0</span>
+                        <span className="bg-yellow-400 h-4 w-4 text-center rounded-full text-black font-bold top-0 right-0 md:right-10 absolute">
+                            0
+                        </span>
                         <ShoppingCartIcon className="h-10" />
                         <p className="hidden md:inline font-extrabold md:text-sm mt-2">Basket</p>
                     </div>
@@ -45,7 +49,7 @@ const Header = () => {
             {/* bottom nav */}
             <div className="flex items-center space-x-3 p-2 pl-6 text-white text-sm bg-amazon_blue-light">
                 <p className="flex items-center link">
-                    <MenuIcon className="h-6 mr-1"/>
+                    <MenuIcon className="h-6 mr-1" />
                 </p>
                 <p className="link">All </p>
                 <p className="link">Prime Video</p>
