@@ -15,7 +15,7 @@ const Product = ({ id, title, price, description, category, image }) => {
             <Image width={200} height={200} objectFit="contain" src={image} alt={title} />
             <h4 className="my-3">{title}</h4>
             <div className="flex">
-                {[...Array(rating).keys()].map((item) => (
+                {[...Array(rating).keys()].map((_) => (
                     <StarIcon className="h-5 text-yellow-500" />
                 ))}
             </div>

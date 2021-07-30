@@ -6,7 +6,7 @@ const ProductFeed = ({ products }) => {
             {products.slice(0, 4).map((product) => (
                 <Product key={product.id} {...product} />
             ))}
-            <img className="md:col-span-full" src="https://links.papareact.com/dyz" />
+            <img className="md:col-span-full my-4" src="https://links.papareact.com/dyz" />
             <div className="md:col-span-2">
                 {products.slice(4, 5).map((product) => (
                     <Product key={product.id} {...product} />
