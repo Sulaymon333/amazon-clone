@@ -3,6 +3,8 @@ module.exports = {
         domains: ['logos-world.net', 'links.papareact.com', 'fakestoreapi.com'],
     },
     env: {
-        stripe_public_key: process.env.STRIPE_PUBLIC_KEY,
+        stripe_public_key: `${process.env.STRIPE_PUBLIC_KEY}`,
     },
 };
+console.log('jsjsj');
+console.log(process.env.STRIPE_PUBLIC_KEY);
