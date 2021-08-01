@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/client';
 import { useSelector } from 'react-redux';
 import Header from '../components/Header';
 import { loadStripe } from '@stripe/stripe-js';
-import { singIn } from 'next-auth/client';
+import { signIn } from 'next-auth/client';
 import { selectItems, selectTotal } from '../slices/basketSlice';
 import CheckoutProduct from '../components/CheckoutProduct';
 
