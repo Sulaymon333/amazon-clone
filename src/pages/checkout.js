@@ -68,7 +68,10 @@ const checkout = () => {
                             role="link"
                             onClick={!session ? signIn : createCheckoutSession}
                             // disabled={!session}
-                            className={`btn ${!session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300'}`}
+                            className={`btn ${
+                                !session &&
+                                'from-gray-300 to-gray-500 border-gray-200 text-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 active:from-gray-500'
+                            }`}
                         >
                             {!session ? 'Sign in to checkout' : 'Proceed to checkout'}
                         </button>
