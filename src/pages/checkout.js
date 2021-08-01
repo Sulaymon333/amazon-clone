@@ -9,6 +9,8 @@ import { selectItems, selectTotal } from '../slices/basketSlice';
 import CheckoutProduct from '../components/CheckoutProduct';
 
 const stripePromise = loadStripe(process.env.stripe_public_key);
+console.log(process.env.stripe_public_key);
+console.log(`${typeof process.env.stripe_public_key}`);
 
 const checkout = () => {
     const [session] = useSession();
