@@ -11,7 +11,7 @@ const Header = () => {
     const items = useSelector(selectItems);
 
     return (
-        <header>
+        <header className="sticky top-0 z-50">
             {/* top nav */}
             <div className="flex flex-grow items-center p-1 py-2 space-x-6 bg-amazon_blue">
                 <div className="flex items-center flex-grow sm:flex-grow-0 mt-2">

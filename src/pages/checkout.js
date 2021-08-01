@@ -35,7 +35,7 @@ const checkout = () => {
         }
     };
     return (
-        <div className="bg-gray-100">
+        <div className="bg-gray-100 h-screen">
             <Header />
             <main className="lg:flex max-w-screen-2xl mx-auto">
                 {/* left */}
