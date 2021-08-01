@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/client';
 import { useSelector } from 'react-redux';
 import Header from '../components/Header';
 import { loadStripe } from '@stripe/stripe-js';
+import { singIn } from 'next-auth/client';
 import { selectItems, selectTotal } from '../slices/basketSlice';
 import CheckoutProduct from '../components/CheckoutProduct';
 
@@ -65,11 +66,9 @@ const checkout = () => {
                         </h2>
                         <button
                             role="link"
-                            onClick={createCheckoutSession}
-                            disabled={!session}
-                            className={`btn ${
-                                !session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed'
-                            }`}
+                            onClick={!session ? signIn : createCheckoutSession}
+                            // disabled={!session}
+                            className={`btn ${!session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300'}`}
                         >
                             {!session ? 'Sign in to checkout' : 'Proceed to checkout'}
                         </button>
@@ -81,3 +80,6 @@ const checkout = () => {
 };
 
 export default checkout;
+
+// button class
+// className={`btn ${!session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed'}`}
